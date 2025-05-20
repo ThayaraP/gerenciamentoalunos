@@ -28,7 +28,7 @@ def listar_alunos():
     for aluno in ALUNOS.values():
         resposta += (f"Nome: {aluno.nome} \n"
                     f"Matricula: {aluno.matricula} \n"
-                    f"Curso: {aluno.curso.nome or "Sem curso no momento"} \n"
+                    f"Curso: {aluno.curso.nome if aluno.curso else "Sem curso no momento"} \n"
                     f"------------------------ \n")
 
     return resposta
@@ -43,7 +43,7 @@ def detalhar_aluno(matricula):
             f"Matricula: {aluno.matricula} \n"
             f"Data de nascimeto: {aluno.nascimento} \n"
             f"Data de ingresso: {aluno.ingresso} \n"
-            f"Curso: {aluno.curso.nome or "Sem curso no momento"} \n"
+            f"Curso: {aluno.curso.nome if aluno.curso else "Sem curso no momento"} \n"
             f"Notas: {aluno.notas}")
 
 
